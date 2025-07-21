@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "5yc702DRwo5VqUzmZ+R8ZspYrZvmIvBJgd3NBeWQkYY=",
+  "Source": "AcademiaHub",
+  "BasePath": "_content/AcademiaHub",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AcademiaHub\\wwwroot",
+      "Source": "AcademiaHub",
+      "ContentRoot": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\wwwroot\\",
+      "BasePath": "_content/AcademiaHub",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
