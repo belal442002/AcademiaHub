@@ -85,6 +85,15 @@ namespace AcademiaHub.Controllers
                 return NotFound(new { Message = $"No classroom found with id: {student_ClassroomAddRequest.ClassroomId}" });
             }
 
+            Student_Classroom? is_StudClass_Exist =
+                await _unitOfWork.StudentClassroomRepository.
+                GetByIdAsync(student_ClassroomAddRequest.StudentId, student_ClassroomAddRequest.ClassroomId);
+            
+            if(is_StudClass_Exist != null)
+            {
+                return BadRequest(new { Message = "This student is already registered in this classroom"});
+            }
+
             Student_Classroom student_Classroom = 
                 _mapper.Map<Student_Classroom>(student_ClassroomAddRequest);
 

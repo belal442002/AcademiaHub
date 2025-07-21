@@ -281,5 +281,126 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "AddTeacherToClassroom",
+    "RelativePath": "api/TeacherClassroom/AddTeacherToClassroom",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teacher_ClassroomAddRequest",
+        "Type": "AcademiaHub.Models.Dto.Teacher_Classroom.Teacher_ClassroomAddRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "replace",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "DeleteTeacherClassroom",
+    "RelativePath": "api/TeacherClassroom/DeleteTeacherClassroom/{teacherId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teacherId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "DeleteTeacherClassroom",
+    "RelativePath": "api/TeacherClassroom/DeleteTeacherClassroom/{teacherId}/{classroomId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teacherId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "classroomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "GetClassroomByTeacherId",
+    "RelativePath": "api/TeacherClassroom/GetClassroomByTeacherId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "GetTeacherByClassroomId",
+    "RelativePath": "api/TeacherClassroom/GetTeacherByClassroomId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "GetTeacherClassroomById",
+    "RelativePath": "api/TeacherClassroom/GetTeacherClassroomById/{teacherId}/{classroomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teacherId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "classroomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.TeacherClassroomController",
+    "Method": "GetTeacherClassrooms",
+    "RelativePath": "api/TeacherClassroom/GetTeacherClassrooms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
