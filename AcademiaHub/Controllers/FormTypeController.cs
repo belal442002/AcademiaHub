@@ -3,6 +3,7 @@ using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.FormType;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class FormTypeController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -24,6 +26,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetFormTypes()
         {
             IEnumerable<FormType> formTypes =

@@ -3,16 +3,15 @@ using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.Student_QuestionsForm;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.SqlServer.Server;
 
 namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class Student_QuestionsFormController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -27,6 +26,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{studentId:guid}/{formId:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudentGrade([FromRoute]Guid studentId, [FromRoute]int formId)
         {
             Student_QuestionsForm? student_QuestionsForm =
@@ -34,11 +34,11 @@ namespace AcademiaHub.Controllers
                 (
                     filter: f => f.QuestionsFormId == formId && f.StudentId == studentId,
                     include: f => f.Include(f => f.QuestionsForm).ThenInclude(f => f!.FormType).
-                                    Include(f => f.QuestionsForm).ThenInclude(f => f!.FormDetailsId).
+                                    Include(f => f.QuestionsForm).ThenInclude(f => f!.FormDetails).
                                     Include(f => f.Studnet)
                 );
-
-            if(student_QuestionsForm != null)
+            
+            if(student_QuestionsForm == null)
             {
                 return NotFound(new {Message = $"No Grade found for student with id: {studentId}," +
                     $" and form with id: {formId}"});
@@ -53,6 +53,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudentGradesByClassroomId([FromRoute] int id)
         {
             Classroom? classroom = 
@@ -73,7 +74,7 @@ namespace AcademiaHub.Controllers
                 (
                     filter: f => formsIds.Contains(f.QuestionsFormId),
                     include: f => f.Include(f => f.QuestionsForm).ThenInclude(f => f!.FormType).
-                                    Include(f => f.QuestionsForm).ThenInclude(f => f!.FormDetailsId).
+                                    Include(f => f.QuestionsForm).ThenInclude(f => f!.FormDetails).
                                     Include(f => f.Studnet)
                 );
 
@@ -86,6 +87,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddGradeToStudent([FromBody] Student_QuestionsFormAddRequest student_QuestionsFormAddRequest)
         {
             Student? student =
@@ -131,6 +133,7 @@ namespace AcademiaHub.Controllers
         [HttpPut]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> UpdateStudentGrade()
         {
             await Task.Delay(100);

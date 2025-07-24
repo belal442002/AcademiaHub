@@ -23,6 +23,8 @@ namespace AcademiaHub.Repositories
         public void UpdateRange(List<T> entities) => _dbSet.UpdateRange(entities);
 
         public void Delete(T entity) =>  _dbSet.Remove(entity);
+        public void DeleteRange(List<T> entities) => _dbSet.RemoveRange(entities);
+
         public async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>>? filter = null,
                                             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                                             Func<IQueryable<T>, IQueryable<T>>? include = null)
@@ -57,5 +59,7 @@ namespace AcademiaHub.Repositories
 
             return await query.ToListAsync();
         }
+
+        
     }
 }

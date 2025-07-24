@@ -37,8 +37,8 @@
   },
   {
     "ContainingType": "AcademiaHub.Controllers.AuthController",
-    "Method": "DeleteUserByUserId",
-    "RelativePath": "api/Auth/DeleteUserByUserId/{userId}",
+    "Method": "DeleteAdminUserByUserId",
+    "RelativePath": "api/Auth/DeleteAdminUserByUserId/{userId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -269,6 +269,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AcademiaHub.Controllers.FormStudentAnswersController",
+    "Method": "ViewStudentAnswersByFormId",
+    "RelativePath": "api/FormStudentAnswers/ViewStudentAnswersByFormId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AcademiaHub.Controllers.FormTypeController",
     "Method": "GetFormTypes",
     "RelativePath": "api/FormType/GetFormTypes",
@@ -305,6 +321,22 @@
       {
         "Name": "questionsAddRequest",
         "Type": "System.Collections.Generic.List\u00601[[AcademiaHub.Models.Dto.QuestionBank.QuestionsAddRequest, AcademiaHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionBankController",
+    "Method": "DeleteQuestionById",
+    "RelativePath": "api/QuestionBank/DeleteQuestionById/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -453,6 +485,69 @@
     "Method": "GetQuestionTypes",
     "RelativePath": "api/QuestionTypes/GetQuestionTypes",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.Student_QuestionsFormController",
+    "Method": "AddGradeToStudent",
+    "RelativePath": "api/Student_QuestionsForm/AddGradeToStudent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "student_QuestionsFormAddRequest",
+        "Type": "AcademiaHub.Models.Dto.Student_QuestionsForm.Student_QuestionsFormAddRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.Student_QuestionsFormController",
+    "Method": "GetStudentGrade",
+    "RelativePath": "api/Student_QuestionsForm/GetStudentGrade/{studentId}/{formId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.Student_QuestionsFormController",
+    "Method": "GetStudentGradesByClassroomId",
+    "RelativePath": "api/Student_QuestionsForm/GetStudentGradesByClassroomId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.Student_QuestionsFormController",
+    "Method": "UpdateStudentGrade",
+    "RelativePath": "api/Student_QuestionsForm/UpdateStudentGrade",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

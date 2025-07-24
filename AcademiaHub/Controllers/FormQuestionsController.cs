@@ -4,6 +4,7 @@ using AcademiaHub.Models.Dto.Form_Questions;
 using AcademiaHub.Models.Dto.QuestionBank;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class FormQuestionsController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -26,6 +28,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddQuestionsToForm([FromBody] List<FormQuestionsAddRequest> formQuestionsAddRequest)
         {
             if (!formQuestionsAddRequest.Any())
@@ -77,6 +80,7 @@ namespace AcademiaHub.Controllers
         [Route("[action]/{id:int}")]
         [ValidationModel]
         // Action for teacher
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetFormQuestionsByFormId([FromRoute] int id)
         {
             IEnumerable<Form_Questions> form_Questions =
@@ -98,7 +102,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{studentId:guid}/{formId:int}")]
         [ValidationModel]
-        // Action for student
+        //[Authorize(Roles = "Admin,Student,Teacher")]
         public async Task<IActionResult> GetFormQuestionsForStudentByFormAndStudentId([FromRoute] Guid studentId, [FromRoute] int formId)
         {
             IEnumerable<FormStudentAnswers> formStudentAnswers =

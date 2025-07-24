@@ -3,6 +3,7 @@ using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.FormStudentAnswers;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class FormStudentAnswersController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -89,6 +91,8 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Student")]
+
         public async Task<IActionResult> UploadFormQuestions([FromBody] FormAnswersUploadRequest formAnswersUploadRequest)
         {
             Student? student =
@@ -182,6 +186,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> ViewStudentAnswersByFormId(int id)
         {
             Form_Questions? formQuestions =

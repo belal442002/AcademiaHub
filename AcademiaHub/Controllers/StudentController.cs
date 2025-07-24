@@ -2,6 +2,7 @@
 using AcademiaHub.Models.Dto.Student;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class StudentController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -23,6 +25,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudents()
         {
             IEnumerable<Student> students = await _unitOfWork.StudentRepository.GetAsync
@@ -35,6 +38,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:guid}")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudentById([FromRoute] Guid id)
         {
             Student? student = await _unitOfWork.StudentRepository.FirstOrDefaultAsync

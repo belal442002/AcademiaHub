@@ -6,8 +6,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project>
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBBD2S8FfUywoBLyl7c8HAAAAAACAAAAAAAQZgAAAAEAACAAAAA9CF6CyPjRQQS3tuDKEH+ogduqSQ1WAMAq4b3xALINUwAAAAAOgAAAAAIAACAAAABEl3sROWRkCLFt/csUtM9Vlsg+0HvWJhXeH+0foACI0SAAAAD4LMzVmPg14XuhxixqnidUANh9LK1F9qsep/r0Xas960AAAABaW09ays+GdKI6WbAdfs0kaCm5g1kWWQWF72yb3Hk8zs65MnmcJ9iavhNkLIkevyVUa/7IzgrcsKgeE59dQmTR</EncryptedPassword>
-    <History>True|2025-07-23T16:55:50.5113381Z;</History>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBBD2S8FfUywoBLyl7c8HAAAAAACAAAAAAAQZgAAAAEAACAAAAC1LDRieNl6LZqtECpDgUwwC2k5jZCzp4UndKhlohu6fAAAAAAOgAAAAAIAACAAAAAq6HthZlKyeEx8LRb0h9GybIxq8Dpo8cBj2YfddjtkiSAAAABZnxIvP5UdRiUoDAtKWK+xzJ1ximFEIuFCiJKlccMzVUAAAADNOrPdg4piH7SStm8HhHE8IkMt7wecDCsEA//PxRolkcLXcptBAAyU0BaFkDv8nHRW+JDPkKnlCkqJJw/SRysS</EncryptedPassword>
+    <History>True|2025-07-24T16:40:29.4549142Z;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

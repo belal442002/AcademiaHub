@@ -1,4 +1,5 @@
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Release\net8.0\PubTmp\Out\AcademiaHub.exe
+E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Release\net8.0\PubTmp\Out\AcademiaHub.postman_collection.json
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Release\net8.0\PubTmp\Out\appsettings.json
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Release\net8.0\PubTmp\Out\AcademiaHub.dll

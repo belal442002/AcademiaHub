@@ -54,11 +54,10 @@ namespace AcademiaHub.Services
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                //issuer: issuer,
-                //audience: audience,
+                issuer: issuer,
+                audience: audience,
                 claims: claims,
                 //expires: DateTime.UtcNow.AddMinutes(45),
-                //signingCredentials: credentials
                 expires: expirationDate,
                 signingCredentials: credentials
                 );

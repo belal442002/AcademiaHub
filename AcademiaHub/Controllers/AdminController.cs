@@ -1,5 +1,6 @@
 ﻿using AcademiaHub.CustomValidation;
 using AcademiaHub.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +8,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ValidationModel]
+    [Authorize]
     public class AdminController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -17,6 +18,7 @@ namespace AcademiaHub.Controllers
             _userService = userService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("[action]")]
         public async Task<IActionResult> GetAllUsers()

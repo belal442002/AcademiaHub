@@ -21,5 +21,6 @@ namespace AcademiaHub.Repositories
         void UpdateRange(List<T> entities);
 
         void Delete(T entity);
+        void DeleteRange(List<T> entities);
     }
 }

@@ -20,6 +20,7 @@ namespace AcademiaHub.UnitOfWork
         IFormQuestionsRepository FormQuestionsRepository { get; }
         IFormStudentAnswerRepository FormStudentAnswerRepository { get; }
         IStudent_QuestionsFormRepository Student_QuestionsFormRepository { get; }
+        IQBAnswersRepository QBAnswersRepository { get; }
 
         // Methods
         Task BeginTransactionAsync();

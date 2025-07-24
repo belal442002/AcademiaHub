@@ -3,7 +3,7 @@ using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.QuestionBank;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +11,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class QuestionBankController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -25,6 +26,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:guid}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetQuestionById([FromRoute] Guid id)
         {
             QuestionBank? question =
@@ -51,6 +53,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetQuestionsByClassroomId([FromRoute] int id)
         {
             Classroom? classroom = 
@@ -81,6 +84,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddQuestion([FromBody] QuestionsAddRequest questionAddRequest)
         {
             QuestionBank question = _mapper.Map<QuestionBank>(questionAddRequest);
@@ -102,6 +106,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddQuestions([FromBody] List<QuestionsAddRequest> questionsAddRequest)
         {
             List<QuestionBank> questions =
@@ -114,6 +119,43 @@ namespace AcademiaHub.Controllers
                 _mapper.Map<List<QuestionsGetRequest>>(questions);
 
             return Created(string.Empty, questionsGetRequest);
+        }
+
+        [HttpDelete]
+        [Route("[action]/{id:guid}")]
+        [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
+        public async Task<IActionResult> DeleteQuestionById([FromRoute] Guid id)
+        {
+            QuestionBank? question =
+                await _unitOfWork.QuestionBankRepository.FirstOrDefaultAsync
+                (
+                    filter: q => q.QuestionId == id,
+                    include: q => q.Include(q => q.Answers)
+                );
+
+            if(question == null)
+            {
+                return NotFound(new { Message = $"No question found with id: {id}"});
+            }
+
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+
+                // First transaction
+                _unitOfWork.QBAnswersRepository.DeleteRange(question.Answers!);
+                _unitOfWork.QuestionBankRepository.Delete(question);
+
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitAsync();
+                return Ok(new { Message = "Deleted Successfully"});
+
+            }catch (Exception ex)
+            {
+                await _unitOfWork.RollBackAsync();
+                return BadRequest(new { Message = ex.Message});
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using AcademiaHub.Models.Dto.Teacher_Classroom;
 using AcademiaHub.Repositories;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class TeacherClassroomController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -26,6 +28,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        //[Authorize(Roles = "Admin")]
         public async Task <IActionResult> GetTeacherClassrooms()
         {
             IEnumerable<Teacher_Classroom> teacher_Classrooms =
@@ -42,6 +45,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{teacherId:guid}/{classroomId:int}")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetTeacherClassroomById([FromRoute] Guid teacherId, [FromRoute] int classroomId)
         {
             Teacher_Classroom? teacher_Classroom =
@@ -64,6 +68,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:guid}")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetClassroomByTeacherId(Guid id)
         {
             Teacher? teacher = await _unitOfWork.TeacherRepository.GetByIdAsync(id);
@@ -94,6 +99,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:int}")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetTeacherByClassroomId(int id)
         {
             Classroom? classroom = await _unitOfWork.ClassroomRepository.GetByIdAsync(id);
@@ -125,6 +131,7 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddTeacherToClassroom([FromBody] Teacher_ClassroomAddRequest teacher_ClassroomAddRequest, [FromQuery] bool? replace = null)
         {
             Teacher? teacher =
@@ -234,6 +241,7 @@ namespace AcademiaHub.Controllers
 
         [HttpDelete]
         [Route("[action]/{teacherId:guid}/{classroomId:int}")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteTeacherClassroom([FromRoute] Guid teacherId, [FromRoute] int classroomId)
         {
             Teacher_Classroom? teacher_Classroom =
@@ -258,6 +266,7 @@ namespace AcademiaHub.Controllers
 
         [HttpDelete]
         [Route("[action]/{teacherId:guid}")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteTeacherClassroom([FromRoute] Guid teacherId)
         {
             Teacher_Classroom? teacher_Classroom =

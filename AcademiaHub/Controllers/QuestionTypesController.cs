@@ -2,6 +2,7 @@
 using AcademiaHub.Models.Dto.QuestionType;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class QuestionTypesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -22,6 +24,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetQuestionTypes()
         {
             IEnumerable<QuestionType> questionTypes =

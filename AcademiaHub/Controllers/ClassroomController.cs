@@ -3,6 +3,7 @@ using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.Classroom;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class ClassroomController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -24,6 +26,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Student,Teacher")]
         public async Task<IActionResult> GetClassrooms()
         {
             IEnumerable<Classroom> classrooms = await _unitOfWork.ClassroomRepository.GetAsync
@@ -40,6 +43,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Student,Teacher")]
         public async Task<IActionResult> GetClassroomById([FromRoute] int id)
         {
             Classroom? classroom = await _unitOfWork.ClassroomRepository.FirstOrDefaultAsync
@@ -61,6 +65,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddClassroom([FromBody] ClassroomAddRequest classroomAddRequest)
         {
             Subject? subject =

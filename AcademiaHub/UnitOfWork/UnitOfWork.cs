@@ -26,7 +26,7 @@ namespace AcademiaHub.UnitOfWork
         public IFormQuestionsRepository FormQuestionsRepository { get; private set; }
         public IFormStudentAnswerRepository FormStudentAnswerRepository { get; private set; }
         public IStudent_QuestionsFormRepository Student_QuestionsFormRepository { get; private set; }
-
+        public IQBAnswersRepository QBAnswersRepository { get; private set; }
         public UnitOfWork(AcademiaHubDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -48,6 +48,7 @@ namespace AcademiaHub.UnitOfWork
             FormQuestionsRepository = new FormQuestionsRepository(dbContext);
             FormStudentAnswerRepository = new FormStudentAnswersRepository(dbContext);
             Student_QuestionsFormRepository = new Student_QuestionsFormRepository(dbContext);
+            QBAnswersRepository = new QBAnswersRepository(dbContext);
         }
 
         public async Task<int> SaveChangesAsync() => await _dbContext.SaveChangesAsync();

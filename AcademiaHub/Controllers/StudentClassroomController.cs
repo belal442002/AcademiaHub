@@ -5,6 +5,7 @@ using AcademiaHub.Models.Dto.Student;
 using AcademiaHub.Models.Dto.Student_Classroom;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class StudentClassroomController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -27,6 +29,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{studentId:guid}/{classroomId:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudentClassroomById([FromRoute] Guid studentId, [FromRoute] int classroomId)
         {
             Student_Classroom? student_Classroom =
@@ -54,6 +57,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudentClassrooms()
         {
             IEnumerable<Student_Classroom> student_Classrooms =
@@ -71,6 +75,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddStudentToClassroom([FromBody] Student_ClassroomAddRequest student_ClassroomAddRequest)
         {
             Student? student =
@@ -119,6 +124,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetStudentsByClassroomId(int id)
         {
             Classroom? classroom =
@@ -153,6 +159,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:guid}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Student,Teacher")]
         public async Task<IActionResult> GetClassroomsByStudentId(Guid id)
         {
             Student? student = await _unitOfWork.StudentRepository.GetByIdAsync(id);

@@ -2,6 +2,7 @@
 using AcademiaHub.Models.Dto.Subject;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class SubjectController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -22,6 +24,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetSubjects()
         {
             IEnumerable<Subject> subjects = await _unitOfWork.SubjectRepository.GetAllAsync();
@@ -33,6 +36,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:int}")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetSubjectById(int id)
         {
             Subject? subject = await _unitOfWork.SubjectRepository.GetByIdAsync(id);
@@ -49,6 +53,7 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddSubject([FromBody] SubjectAddRequest subjectAddRequest)
         {
             Subject subject =  _mapper.Map<Subject>(subjectAddRequest);

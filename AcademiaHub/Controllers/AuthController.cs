@@ -4,8 +4,7 @@ using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto;
 using AcademiaHub.Services;
 using AcademiaHub.UnitOfWork;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.InteropServices;
@@ -14,6 +13,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class AuthController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -30,6 +30,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[AllowAnonymous]
         public async Task<IActionResult> RegisterStudent([FromBody] StudentRegisterRequest registerRequest)
         {
             try
@@ -90,6 +91,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[AllowAnonymous]
         public async Task<IActionResult> RegisterTeacher([FromBody] TeacherRegisterRequest registerRequest)
         {
             IdentityUser user = new IdentityUser
@@ -145,6 +147,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[AllowAnonymous]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterAdminRequest registerAdminRequest)
         {
             IdentityUser user = new IdentityUser
@@ -174,6 +177,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             IdentityUser? user = await _userManager.FindByEmailAsync(loginRequest.Email);
@@ -198,6 +202,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> ResetPasswordByUserId([FromBody] ResetPasswordByUserIdRequest resetPassword)
         {
             IdentityUser? user = await _userManager.FindByIdAsync(resetPassword.UserId);
@@ -227,6 +232,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> ResetPasswordByEmail([FromBody] ResetPasswordByEmailRequest resetPassword)
         {
             IdentityUser? user = await _userManager.FindByIdAsync(resetPassword.Email);
@@ -256,6 +262,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> ChangePassword(ChangePasswordRequest changePasswordRequest)
         {
             IdentityUser? user =
@@ -287,12 +294,27 @@ namespace AcademiaHub.Controllers
         [HttpDelete]
         [Route("[action]/{userId}")]
         [ValidationModel]
-        public async Task<IActionResult> DeleteUserByUserId(string userId)
+        //[Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteAdminUserByUserId(string userId)
         {
             IdentityUser? user = await _userManager.FindByIdAsync(userId);
             if(user == null)
             {
                 return NotFound(new { Message = $"No user found with id: {userId}"});
+            }
+
+            IList<string> roles = await _userManager.GetRolesAsync(user);
+            foreach(string role in roles)
+            {
+                if(role.Equals(Helpers.Roles.Student.ToString(), StringComparison.OrdinalIgnoreCase) ||
+                   role.Equals(Helpers.Roles.Teacher.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    return BadRequest(new
+                    {
+                        Message = "Can't delete an account belongs to student or teacher," +
+                        "because of the relations with other tables"
+                    });
+                }
             }
 
             IdentityResult result = await _userManager.DeleteAsync(user);

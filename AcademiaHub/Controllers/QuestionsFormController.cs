@@ -5,6 +5,7 @@ using AcademiaHub.Models.Dto.FormDetails;
 using AcademiaHub.Models.Dto.QuestionsForm;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class QuestionsFormController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -28,6 +30,7 @@ namespace AcademiaHub.Controllers
         [HttpPost]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> AddQuestionsForm([FromBody] QuestionsFormAddRequest questionsFormAddRequest)
         {
             try
@@ -62,7 +65,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
-        // Action for teacher
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetFormsByClassroomId([FromRoute] int id)
         {
             Classroom? classroom = 
@@ -95,7 +98,7 @@ namespace AcademiaHub.Controllers
         [HttpGet]
         [Route("[action]/{id:int}")]
         [ValidationModel]
-        // Action for student
+        //[Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> GetFormsForStudentByClassroomId([FromRoute] int id)
         {
             Classroom? classroom =
@@ -127,8 +130,8 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:int}")]
-        [ValidationModel] 
-        // Action for teacher
+        [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> GetFormById([FromRoute] int id)
         {
             QuestionsForm? form =
@@ -152,6 +155,7 @@ namespace AcademiaHub.Controllers
         [HttpPut]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> DeactivateFormsByClassroomId(int id)
         {
             IEnumerable<QuestionsForm> questionsForms =
@@ -181,6 +185,7 @@ namespace AcademiaHub.Controllers
         [HttpDelete]
         [Route("[action]/{id:int}")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public async Task<IActionResult> DeleteFormByFormId(int id)
         {
             await Task.Delay(10);
@@ -190,6 +195,7 @@ namespace AcademiaHub.Controllers
         [HttpPut]
         [Route("[action]")]
         [ValidationModel]
+        //[Authorize(Roles = "Admin,Teacher")]
         public IActionResult UpdateForm()
         {
             return Ok();
