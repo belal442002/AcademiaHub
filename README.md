@@ -87,21 +87,6 @@ Supports:
 
 ---
 
-## 📁 Project Architecture
-AcademiaHub/
-├── Controllers/
-├── DTOs/
-├── Mappings/ <-- AutoMapper profiles
-├── Models/ <-- Entity models
-├── Repositories/
-│ ├── Interfaces/
-│ └── Implementations/
-├── Services/
-├── UnitOfWork/
-├── Program.cs
-├── appsettings.json
-└── README.md
-
 ## 🛠️ Architecture & Design Patterns
 
 - **Repository Pattern with GenericRepository:**  
