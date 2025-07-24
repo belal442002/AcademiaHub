@@ -1,4 +1,5 @@
-﻿using AcademiaHub.Services;
+﻿using AcademiaHub.CustomValidation;
+using AcademiaHub.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace AcademiaHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ValidationModel]
     public class AdminController : ControllerBase
     {
         private readonly IUserService _userService;

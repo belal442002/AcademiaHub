@@ -157,3 +157,4 @@ E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\De
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Debug\net8.0\AcademiaHub.genruntimeconfig.cache
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Debug\net8.0\ref\AcademiaHub.dll
 E:\Online Education Platform Design\Online Education Platform\AcademiaHub\obj\Debug\net8.0\AcademiaHub.sourcelink.json
+E:\Online Education Platform Design\Online Education Platform\AcademiaHub\bin\Debug\net8.0\AcademiaHub.postman_collection.json

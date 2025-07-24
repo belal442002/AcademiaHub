@@ -1,7 +1,6 @@
 ﻿using AcademiaHub.Data;
 using AcademiaHub.Interfaces;
 using AcademiaHub.Repositories;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace AcademiaHub.UnitOfWork
@@ -18,6 +17,15 @@ namespace AcademiaHub.UnitOfWork
         public IClassroomRepository ClassroomRepository { get; private set; }
         public IStudent_ClassroomRepository StudentClassroomRepository {  get; private set; }
         public ITeacherClassroomRepository TeacherClassroomRepository { get; private set; }
+        public IQuestionBankRepository QuestionBankRepository { get; private set; }
+        public IQuestionTypeRepository QuestionTypeRepository { get; private set; }
+        public IDifficultyRepository DifficultyRepository { get; private set; }
+        public IFormTypeRepository FormTypeRepository { get; private set; }
+        public IQuestionsFormRepository QuestionsFormRepository { get; private set; }
+        public IFormDetailsRepository FormDetailsRepository { get; private set; }
+        public IFormQuestionsRepository FormQuestionsRepository { get; private set; }
+        public IFormStudentAnswerRepository FormStudentAnswerRepository { get; private set; }
+        public IStudent_QuestionsFormRepository Student_QuestionsFormRepository { get; private set; }
 
         public UnitOfWork(AcademiaHubDbContext dbContext)
         {
@@ -31,6 +39,15 @@ namespace AcademiaHub.UnitOfWork
             ClassroomRepository = new ClassroomRepository(dbContext);
             StudentClassroomRepository = new Student_ClassroomRepository(dbContext);
             TeacherClassroomRepository = new TeacherClassroomRepository(dbContext);
+            QuestionBankRepository = new QuestionBankRepository(dbContext);
+            QuestionTypeRepository = new QuestionTypeRepository(dbContext);
+            DifficultyRepository = new DifficultyRepository(dbContext);
+            FormTypeRepository = new FormTypeRepository(dbContext);
+            QuestionsFormRepository = new QuestionsFormRepository(dbContext);
+            FormDetailsRepository = new FormDetailsRepository(dbContext);
+            FormQuestionsRepository = new FormQuestionsRepository(dbContext);
+            FormStudentAnswerRepository = new FormStudentAnswersRepository(dbContext);
+            Student_QuestionsFormRepository = new Student_QuestionsFormRepository(dbContext);
         }
 
         public async Task<int> SaveChangesAsync() => await _dbContext.SaveChangesAsync();

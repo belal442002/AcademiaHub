@@ -20,6 +20,8 @@ namespace AcademiaHub.Repositories
         public async Task<IEnumerable<T>> GetAllAsync() => await _dbSet.ToListAsync();
         public async Task<T?> GetByIdAsync(params object[] keyValues) => await _dbSet.FindAsync(keyValues);
         public void Update(T entity) => _dbSet.Update(entity);
+        public void UpdateRange(List<T> entities) => _dbSet.UpdateRange(entities);
+
         public void Delete(T entity) =>  _dbSet.Remove(entity);
         public async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>>? filter = null,
                                             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,

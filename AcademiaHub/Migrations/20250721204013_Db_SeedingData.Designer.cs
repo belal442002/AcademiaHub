@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcademiaHub.Migrations
 {
     [DbContext(typeof(AcademiaHubDbContext))]
-    [Migration("20250720002928_seeding roles")]
-    partial class seedingroles
+    [Migration("20250721204013_Db_SeedingData")]
+    partial class Db_SeedingData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,10 +54,7 @@ namespace AcademiaHub.Migrations
             modelBuilder.Entity("AcademiaHub.Models.Domain.Difficulty", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("DifficultyLevel")
                         .IsRequired()
@@ -66,6 +63,23 @@ namespace AcademiaHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Difficulties");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DifficultyLevel = "Hard"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DifficultyLevel = "Medium"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DifficultyLevel = "Easy"
+                        });
                 });
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.FormDetails", b =>
@@ -97,10 +111,7 @@ namespace AcademiaHub.Migrations
             modelBuilder.Entity("AcademiaHub.Models.Domain.FormType", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -109,6 +120,18 @@ namespace AcademiaHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FormTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Type = "Assignment"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Type = "Quiz"
+                        });
                 });
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.Form_Questions", b =>
@@ -224,10 +247,7 @@ namespace AcademiaHub.Migrations
             modelBuilder.Entity("AcademiaHub.Models.Domain.QuestionType", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -236,6 +256,23 @@ namespace AcademiaHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("QuestionTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Type = "MultipleChoice"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Type = "Essay"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Type = "TrueOrFalse"
+                        });
                 });
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.QuestionsForm", b =>
@@ -547,6 +584,23 @@ namespace AcademiaHub.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ae11a8b9-658e-4079-b6e8-8f3959de2805",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ae11a8b9-658e-4079-b6e8-8f3959de2805",
+                            Email = "Admin@AcademiaHub.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "ADMIN@ACADEMIAHUB.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIVv8Ew176UOLzUwHnmDRvu0KcPB5Uon3GVg3h38rQ7FzhERZjU9Tdr7T4qgP7vxHg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "bdaef782-7658-4e17-80c5-ab1988038b52",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin@AcademiaHub.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -609,6 +663,13 @@ namespace AcademiaHub.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "ae11a8b9-658e-4079-b6e8-8f3959de2805",
+                            RoleId = "b985b240-2dce-4365-bcf5-c4c792b9076b"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

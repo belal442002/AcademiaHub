@@ -13,7 +13,7 @@ namespace AcademiaHub.Models.Domain
         public int FormDetailsId { get; set; }
         [ForeignKey(nameof(FormType))]
         public int FormTypeId { get; set; }
-        public bool Active { get; set; }
+        public bool Active { get; set; } = false;
 
         // Navigation Properties
         public virtual List<Student_QuestionsForm>? Student_QuestionsForms { get; set; }
@@ -21,5 +21,7 @@ namespace AcademiaHub.Models.Domain
         public virtual FormDetails? FormDetails { get; set; }
         public virtual FormType? FormType { get; set; }
         public virtual List<Form_Questions>? Form_Questions { get; set; }
+        public virtual List<FormStudentAnswers>? FormStudentAnswers { get; set; }
+
     }
 }

@@ -28,6 +28,20 @@ namespace AcademiaHub.Services
             foreach(var role in roles)
             {
                 claims.Add(new Claim("role", role));
+                Guid Id = Guid.Empty;
+                if (role.Equals(Helpers.Roles.Student.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                     Id = _dbContext.Students.
+                         Where(s => s.AccountId == user.Id)
+                         .Select(s => s.Id).FirstOrDefault();
+                }
+                else if(role.Equals(Helpers.Roles.Teacher.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    Id = _dbContext.Teachers.
+                        Where(t => t.AccountId == user.Id).
+                        Select(t => t.Id).FirstOrDefault();
+                }
+                claims.Add(new Claim("Id", Id.ToString()));
             }
 
             var expirationDate = DateTime.UtcNow.AddMinutes(45);

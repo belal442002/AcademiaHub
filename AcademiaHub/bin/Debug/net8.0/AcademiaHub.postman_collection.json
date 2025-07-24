@@ -1,0 +1,648 @@
+{
+  "info": {
+    "_postman_id": "b1e1e1e1-0000-0000-0000-000000000000",
+    "name": "AcademiaHub API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for AcademiaHub Educational Platform API. All endpoints grouped by feature/module, with request/response examples, roles, and authentication requirements."
+  },
+  "item": [
+    {
+      "name": "Authentication & User Management",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"string\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/Auth/Login", "host": ["{{baseUrl}}"], "path": ["api", "Auth", "Login"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"bearerToken\": \"JWT_TOKEN\"\n}"
+            },
+            {
+              "name": "Validation Error",
+              "originalRequest": {},
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"Message\": \"Incorrect Email\"\n}"
+            },
+            {
+              "name": "Unauthorized",
+              "originalRequest": {},
+              "status": "Unauthorized",
+              "code": 401,
+              "body": "{\n  \"Message\": \"Incorrect Password for this email\"\n}"
+            }
+          ],
+          "description": "Role: All (public)\nNo authentication required."
+        },
+        {
+          "name": "Register Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student@example.com\",\n  \"password\": \"string\",\n  \"confirmPassword\": \"string\",\n  \"name\": \"Student Name\",\n  \"address\": \"Address\",\n  \"gender\": \"Male\",\n  \"nationalId\": \"1234567890\",\n  \"phoneNumber\": \"0123456789\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/Auth/RegisterStudent", "host": ["{{baseUrl}}"], "path": ["api", "Auth", "RegisterStudent"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"Message\": \"User created successfully\"\n}"
+            },
+            {
+              "name": "Validation Error",
+              "originalRequest": {},
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"Message\": \"Failed to add user\"\n}"
+            }
+          ],
+          "description": "Role: All (public)\nNo authentication required."
+        },
+        {
+          "name": "Register Teacher",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"teacher@example.com\",\n  \"password\": \"string\",\n  \"confirmPassword\": \"string\",\n  \"name\": \"Teacher Name\",\n  \"address\": \"Address\",\n  \"gender\": \"Female\",\n  \"nationalId\": \"9876543210\",\n  \"phoneNumber\": \"0987654321\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/Auth/RegisterTeacher", "host": ["{{baseUrl}}"], "path": ["api", "Auth", "RegisterTeacher"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"Message\": \"User Created successfully\"\n}"
+            },
+            {
+              "name": "Validation Error",
+              "originalRequest": {},
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"Message\": \"Failed to create user\"\n}"
+            }
+          ],
+          "description": "Role: All (public)\nNo authentication required."
+        },
+        {
+          "name": "Register Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"string\",\n  \"confirmPassword\": \"string\",\n  \"phoneNumber\": \"0123456789\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/Auth/RegisterAdmin", "host": ["{{baseUrl}}"], "path": ["api", "Auth", "RegisterAdmin"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"Message\": \"Admin Created successfully\"\n}"
+            },
+            {
+              "name": "Validation Error",
+              "originalRequest": {},
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"Message\": \"Failed to create admin\"\n}"
+            }
+          ],
+          "description": "Role: All (public)\nNo authentication required."
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"currentPassword\": \"oldpass\",\n  \"newPassword\": \"newpass\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/Auth/ChangePassword", "host": ["{{baseUrl}}"], "path": ["api", "Auth", "ChangePassword"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"Message\": \"Password changed successfully return to log in\"\n}"
+            },
+            {
+              "name": "Validation Error",
+              "originalRequest": {},
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"Message\": \"Couldn't update password: ...\"\n}"
+            }
+          ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        },
+        {
+          "name": "Delete User By UserId",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/api/Auth/DeleteUserByUserId/USER_ID", "host": ["{{baseUrl}}"], "path": ["api", "Auth", "DeleteUserByUserId", "USER_ID"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"Message\": \"Deleted successfully\"\n}"
+            },
+            {
+              "name": "Not Found",
+              "originalRequest": {},
+              "status": "Not Found",
+              "code": 404,
+              "body": "{\n  \"Message\": \"No user found with id: ...\"\n}"
+            }
+          ],
+          "description": "Role: Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/api/Admin/GetAllUsers", "host": ["{{baseUrl}}"], "path": ["api", "Admin", "GetAllUsers"] }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "body": "[{\n  \"userId\": \"...\",\n  \"email\": \"...\",\n  \"roles\": [\"Admin\"]\n}]"
+            }
+          ],
+          "description": "Role: Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Classroom",
+      "item": [
+        {
+          "name": "Get Classrooms",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/api/Classroom/GetClassrooms", "host": ["{{baseUrl}}"], "path": ["api", "Classroom", "GetClassrooms"] }
+          },
+          "response": [
+            { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" }
+          ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Classroom By Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/api/Classroom/GetClassroomById/1", "host": ["{{baseUrl}}"], "path": ["api", "Classroom", "GetClassroomById", "1"] }
+          },
+          "response": [
+            { "name": "Success", "status": "OK", "code": 200, "body": "{...}" },
+            { "name": "Not Found", "status": "Not Found", "code": 404, "body": "{\"Message\":\"No classroom found with id: 1\"}" }
+          ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Add Classroom",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Classroom 1\",\n  \"subjectId\": 1\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/Classroom/AddClassroom", "host": ["{{baseUrl}}"], "path": ["api", "Classroom", "AddClassroom"] }
+          },
+          "response": [
+            { "name": "Success", "status": "Created", "code": 201, "body": "{...}" },
+            { "name": "Validation Error", "status": "Bad Request", "code": 400, "body": "{\"Message\":\"No subject found with id: ...\"}" }
+          ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Question Bank",
+      "item": [
+        {
+          "name": "Get Question By Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/QuestionBank/GetQuestionById/{{questionId}}", "host": ["{{baseUrl}}"], "path": ["api", "QuestionBank", "GetQuestionById", "{{questionId}}"] }
+          },
+          "response": [
+            { "name": "Success", "status": "OK", "code": 200, "body": "{...}" },
+            { "name": "Not Found", "status": "Not Found", "code": 404, "body": "{\"Message\":\"No question found with id: ...\"}" }
+          ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Questions By Classroom Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/QuestionBank/GetQuestionsByClassroomId/{{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "QuestionBank", "GetQuestionsByClassroomId", "{{classroomId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Add Question",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{...}" },
+            "url": { "raw": "{{baseUrl}}/api/QuestionBank/AddQuestion", "host": ["{{baseUrl}}"], "path": ["api", "QuestionBank", "AddQuestion"] }
+          },
+          "response": [ { "name": "Success", "status": "Created", "code": 201, "body": "{...}" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Add Questions (Bulk)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "[{...}]" },
+            "url": { "raw": "{{baseUrl}}/api/QuestionBank/AddQuestions", "host": ["{{baseUrl}}"], "path": ["api", "QuestionBank", "AddQuestions"] }
+          },
+          "response": [ { "name": "Success", "status": "Created", "code": 201, "body": "[{...}]" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Questions Form",
+      "item": [
+        {
+          "name": "Add Questions Form",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{...}" },
+            "url": { "raw": "{{baseUrl}}/api/QuestionsForm/AddQuestionsForm", "host": ["{{baseUrl}}"], "path": ["api", "QuestionsForm", "AddQuestionsForm"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{\"Message\":\"Form and questions added successfully\"}" } ],
+          "description": "Role: Teacher\nRequires Bearer token."
+        },
+        {
+          "name": "Get Forms By Classroom Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/QuestionsForm/GetFormsByClassroomId?id={{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "QuestionsForm", "GetFormsByClassroomId"], "query": [ { "key": "id", "value": "{{classroomId}}" } ] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher\nRequires Bearer token."
+        },
+        {
+          "name": "Get Forms For Student By Classroom Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/QuestionsForm/GetFormsForStudentByClassroomId/{{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "QuestionsForm", "GetFormsForStudentByClassroomId", "{{classroomId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Student\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Form Questions",
+      "item": [
+        {
+          "name": "Add Questions To Form",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "[{...}]" },
+            "url": { "raw": "{{baseUrl}}/api/FormQuestions/AddQuestionsToForm", "host": ["{{baseUrl}}"], "path": ["api", "FormQuestions", "AddQuestionsToForm"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{\"Message\":\"Questions added to the form successfully\"}" } ],
+          "description": "Role: Teacher\nRequires Bearer token."
+        },
+        {
+          "name": "Get Questions Of Form By Form Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/FormQuestions/GetQuestionsOfFormByFormId/{{formId}}", "host": ["{{baseUrl}}"], "path": ["api", "FormQuestions", "GetQuestionsOfFormByFormId", "{{formId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher\nRequires Bearer token."
+        },
+        {
+          "name": "Get Form Questions By Form Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/FormQuestions/GetFormQuestionsByFormId/{{formId}}", "host": ["{{baseUrl}}"], "path": ["api", "FormQuestions", "GetFormQuestionsByFormId", "{{formId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher\nRequires Bearer token."
+        },
+        {
+          "name": "Get Form Questions For Student By Form And Student Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/FormQuestions/GetFormQuestionsForStudentByFormAndStudentId/{{studentId}}/{{formId}}", "host": ["{{baseUrl}}"], "path": ["api", "FormQuestions", "GetFormQuestionsForStudentByFormAndStudentId", "{{studentId}}", "{{formId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Student\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Student",
+      "item": [
+        {
+          "name": "Get Students",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Student/GetStudents", "host": ["{{baseUrl}}"], "path": ["api", "Student", "GetStudents"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        },
+        {
+          "name": "Get Student By Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Student/GetStudentById/{{studentId}}", "host": ["{{baseUrl}}"], "path": ["api", "Student", "GetStudentById", "{{studentId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Teacher",
+      "item": [
+        {
+          "name": "Get Teachers",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Teacher/GetTeachers", "host": ["{{baseUrl}}"], "path": ["api", "Teacher", "GetTeachers"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        },
+        {
+          "name": "Get Teacher By Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Teacher/GetTeacherById/{{teacherId}}", "host": ["{{baseUrl}}"], "path": ["api", "Teacher", "GetTeacherById", "{{teacherId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "StudentClassroom",
+      "item": [
+        {
+          "name": "Add Student To Classroom",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{...}" },
+            "url": { "raw": "{{baseUrl}}/api/StudentClassroom/AddStudentToClassroom", "host": ["{{baseUrl}}"], "path": ["api", "StudentClassroom", "AddStudentToClassroom"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Classrooms By Student Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/StudentClassroom/GetClassroomsByStudentId/{{studentId}}", "host": ["{{baseUrl}}"], "path": ["api", "StudentClassroom", "GetClassroomsByStudentId", "{{studentId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Student Classroom By Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/StudentClassroom/GetStudentClassroomById/{{studentId}}/{{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "StudentClassroom", "GetStudentClassroomById", "{{studentId}}", "{{classroomId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Student Classrooms",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/StudentClassroom/GetStudentClassrooms", "host": ["{{baseUrl}}"], "path": ["api", "StudentClassroom", "GetStudentClassrooms"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Students By Classroom Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/StudentClassroom/GetStudentsByClassroomId/{{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "StudentClassroom", "GetStudentsByClassroomId", "{{classroomId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "TeacherClassroom",
+      "item": [
+        {
+          "name": "Add Teacher To Classroom",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{...}" },
+            "url": { "raw": "{{baseUrl}}/api/TeacherClassroom/AddTeacherToClassroom", "host": ["{{baseUrl}}"], "path": ["api", "TeacherClassroom", "AddTeacherToClassroom"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Classroom By Teacher Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/TeacherClassroom/GetClassroomByTeacherId/{{teacherId}}", "host": ["{{baseUrl}}"], "path": ["api", "TeacherClassroom", "GetClassroomByTeacherId", "{{teacherId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Teacher By Classroom Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/TeacherClassroom/GetTeacherByClassroomId/{{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "TeacherClassroom", "GetTeacherByClassroomId", "{{classroomId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Teacher Classroom By Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/TeacherClassroom/GetTeacherClassroomById/{{teacherId}}/{{classroomId}}", "host": ["{{baseUrl}}"], "path": ["api", "TeacherClassroom", "GetTeacherClassroomById", "{{teacherId}}", "{{classroomId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Teacher Classrooms",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/TeacherClassroom/GetTeacherClassrooms", "host": ["{{baseUrl}}"], "path": ["api", "TeacherClassroom", "GetTeacherClassrooms"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Subject",
+      "item": [
+        {
+          "name": "Get Subjects",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Subject/GetSubjects", "host": ["{{baseUrl}}"], "path": ["api", "Subject", "GetSubjects"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Get Subject By Id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Subject/GetSubjectById/{{subjectId}}", "host": ["{{baseUrl}}"], "path": ["api", "Subject", "GetSubjectById", "{{subjectId}}"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "{...}" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        },
+        {
+          "name": "Add Subject",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{...}" },
+            "url": { "raw": "{{baseUrl}}/api/Subject/AddSubject", "host": ["{{baseUrl}}"], "path": ["api", "Subject", "AddSubject"] }
+          },
+          "response": [ { "name": "Success", "status": "Created", "code": 201, "body": "{...}" } ],
+          "description": "Role: Teacher, Admin\nRequires Bearer token."
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "item": [
+        {
+          "name": "Get Difficulties",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/Difficulties/action", "host": ["{{baseUrl}}"], "path": ["api", "Difficulties", "action"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        },
+        {
+          "name": "Get Question Types",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/QuestionTypes/GetQuestionTypes", "host": ["{{baseUrl}}"], "path": ["api", "QuestionTypes", "GetQuestionTypes"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        },
+        {
+          "name": "Get Form Types",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{baseUrl}}/api/FormType/GetFormTypes", "host": ["{{baseUrl}}"], "path": ["api", "FormType", "GetFormTypes"] }
+          },
+          "response": [ { "name": "Success", "status": "OK", "code": 200, "body": "[{...}]" } ],
+          "description": "Role: Authenticated\nRequires Bearer token."
+        }
+      ]
+    }
+  ]
+}

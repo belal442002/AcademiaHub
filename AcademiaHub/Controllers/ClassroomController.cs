@@ -1,4 +1,5 @@
-﻿using AcademiaHub.Models.Domain;
+﻿using AcademiaHub.CustomValidation;
+using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.Classroom;
 using AcademiaHub.UnitOfWork;
 using AutoMapper;
@@ -22,6 +23,7 @@ namespace AcademiaHub.Controllers
         }
         [HttpGet]
         [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> GetClassrooms()
         {
             IEnumerable<Classroom> classrooms = await _unitOfWork.ClassroomRepository.GetAsync
@@ -37,6 +39,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:int}")]
+        [ValidationModel]
         public async Task<IActionResult> GetClassroomById([FromRoute] int id)
         {
             Classroom? classroom = await _unitOfWork.ClassroomRepository.FirstOrDefaultAsync
@@ -57,6 +60,7 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> AddClassroom([FromBody] ClassroomAddRequest classroomAddRequest)
         {
             Subject? subject =
@@ -74,5 +78,46 @@ namespace AcademiaHub.Controllers
 
             return CreatedAtAction(nameof(GetClassroomById), new { id = classroomGetRequest.Id }, classroomGetRequest);
         }
+
+        //[HttpDelete]
+        //[Route("[action]/{id:int}")]
+        //public async Task<IActionResult> DeleteClassroom([FromRoute] int id)
+        //{
+        //    Classroom? classroom = await _unitOfWork.ClassroomRepository.GetByIdAsync(id);
+        //    if(classroom == null)
+        //    {
+        //        return NotFound(new { Message = $"No classroom found with id: {id}"});
+        //    }
+
+        //    IEnumerable<Student_Classroom> student_Classrooms = 
+        //    await _unitOfWork.StudentClassroomRepository.GetAsync
+        //    (
+        //        filter: sc => sc.ClassroomId == id
+        //    );
+
+        //    if(student_Classrooms.Any())
+        //    {
+        //        return BadRequest(new { Message = "There are students registered in this classroom" +
+        //                                "Remove them first to delete"});
+        //    }
+
+        //    Teacher_Classroom? teacher_Classroom =
+        //        await _unitOfWork.TeacherClassroomRepository.FirstOrDefaultAsync
+        //        (
+        //            filter: tc => tc.ClassroomId == id
+        //        );
+
+        //    if(teacher_Classroom != null)
+        //    {
+        //        return BadRequest(new
+        //        {
+        //            Message = "There is a teacher in this classroom" +
+        //                                "Remove him first to delete"
+        //        });
+        //    }
+
+        //    IEnumerable<QuestionBank> questions = 
+        //        await _unitOfWork
+        //}
     }
 }

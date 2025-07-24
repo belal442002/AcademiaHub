@@ -1,9 +1,11 @@
-﻿using AcademiaHub.Helpers;
+﻿using AcademiaHub.CustomValidation;
+using AcademiaHub.Helpers;
 using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto;
 using AcademiaHub.Services;
 using AcademiaHub.UnitOfWork;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.InteropServices;
@@ -27,6 +29,7 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> RegisterStudent([FromBody] StudentRegisterRequest registerRequest)
         {
             try
@@ -86,6 +89,7 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> RegisterTeacher([FromBody] TeacherRegisterRequest registerRequest)
         {
             IdentityUser user = new IdentityUser
@@ -140,6 +144,36 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        [ValidationModel]
+        public async Task<IActionResult> RegisterAdmin([FromBody] RegisterAdminRequest registerAdminRequest)
+        {
+            IdentityUser user = new IdentityUser
+            {
+                Email = registerAdminRequest.Email,
+                UserName = registerAdminRequest.Email,
+                PhoneNumber = registerAdminRequest?.PhoneNumber,
+            };
+
+            IdentityResult result = await _userManager.CreateAsync(user, registerAdminRequest!.Password);
+
+            if(!result.Succeeded)
+            {
+                return BadRequest(new { Message = "Failed to create admin" });
+            }
+
+            result = await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+            if(!result.Succeeded)
+            {
+                return BadRequest(new { Message = "Failed to add role to the admin" });
+            }
+
+            return Ok(new { Message = "Admin Created successfully" });
+
+        }
+
+        [HttpPost]
+        [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             IdentityUser? user = await _userManager.FindByEmailAsync(loginRequest.Email);
@@ -159,6 +193,115 @@ namespace AcademiaHub.Controllers
             };
 
             return Ok(response);
+        }
+
+        [HttpPost]
+        [Route("[action]")]
+        [ValidationModel]
+        public async Task<IActionResult> ResetPasswordByUserId([FromBody] ResetPasswordByUserIdRequest resetPassword)
+        {
+            IdentityUser? user = await _userManager.FindByIdAsync(resetPassword.UserId);
+            if(user == null)
+            {
+                return NotFound(new { Message = $"No user found with id: {resetPassword.UserId}"});
+            }
+
+            string? token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            if (token == null)
+            {
+                return BadRequest(new { Message = "Failed to generate the token for reset" });
+            }
+
+            IdentityResult result = await _userManager.ResetPasswordAsync(user, token, resetPassword.NewPassword);
+            if(result.Succeeded)
+            {
+                return Ok(new { Message = $"Password has been reset successfully to {resetPassword.NewPassword}" });
+            }
+            else
+            {
+                string errors = string.Join('\n', result.Errors.Select(e => e.Description));
+                return BadRequest(new { Message = $"Unable to reset password: {errors}" });
+            }
+        }
+
+        [HttpPost]
+        [Route("[action]")]
+        [ValidationModel]
+        public async Task<IActionResult> ResetPasswordByEmail([FromBody] ResetPasswordByEmailRequest resetPassword)
+        {
+            IdentityUser? user = await _userManager.FindByIdAsync(resetPassword.Email);
+            if (user == null)
+            {
+                return NotFound(new { Message = $"No user found with email: {resetPassword.Email}" });
+            }
+
+            string? token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            if(token == null)
+            {
+                return BadRequest(new { Message = "Failed to generate the token for reset" });
+            }
+
+            IdentityResult result = await _userManager.ResetPasswordAsync(user, token, resetPassword.NewPassword);
+            if (result.Succeeded)
+            {
+                return Ok(new {Message = $"Password has been reset successfully to {resetPassword.NewPassword}" });
+            }
+            else
+            {
+                string errors = string.Join('\n', result.Errors.Select(e => e.Description));
+                return BadRequest(new { Message = $"Unable to reset password: {errors}" });
+            }
+        }
+
+        [HttpPost]
+        [Route("[action]")]
+        [ValidationModel]
+        public async Task<IActionResult> ChangePassword(ChangePasswordRequest changePasswordRequest)
+        {
+            IdentityUser? user =
+                await _userManager.FindByEmailAsync(changePasswordRequest.Email);
+
+            if(user == null)
+            {
+                return NotFound(new {Message = $"No User found with email: {changePasswordRequest.Email}" });
+            }
+
+            IdentityResult result =
+                await _userManager.
+                ChangePasswordAsync(user,
+                                    changePasswordRequest.CurrentPassword,
+                                    changePasswordRequest.NewPassword);
+
+            if (result.Succeeded)
+            {
+                return Ok(new { Message = "Password changed successfully return to log in" });
+            }
+            else
+            {
+                string errors = string.Join('\n', result.Errors.
+                    Select(e => e.Description));
+                return BadRequest(new { Message = $"Couldn't update password: {errors}"});
+            }
+        }
+
+        [HttpDelete]
+        [Route("[action]/{userId}")]
+        [ValidationModel]
+        public async Task<IActionResult> DeleteUserByUserId(string userId)
+        {
+            IdentityUser? user = await _userManager.FindByIdAsync(userId);
+            if(user == null)
+            {
+                return NotFound(new { Message = $"No user found with id: {userId}"});
+            }
+
+            IdentityResult result = await _userManager.DeleteAsync(user);
+            if(!result.Succeeded)
+            {
+                string errors = string.Join('\n', result.Errors.Select(e => e.Description));
+                return BadRequest(new { Message = $"Failed to delete this user: {errors}" });
+            }
+            return Ok(new { Message = "Deleted successfully" });
         }
     }
 }

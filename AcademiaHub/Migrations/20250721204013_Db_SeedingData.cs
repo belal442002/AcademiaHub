@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace AcademiaHub.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Db_SeedingData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,8 +56,7 @@ namespace AcademiaHub.Migrations
                 name: "Difficulties",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     DifficultyLevel = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -83,8 +84,7 @@ namespace AcademiaHub.Migrations
                 name: "FormTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -109,8 +109,7 @@ namespace AcademiaHub.Migrations
                 name: "QuestionTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -508,6 +507,55 @@ namespace AcademiaHub.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "26c2b87c-bd59-48aa-87b6-34b414f8d12e", "26c2b87c-bd59-48aa-87b6-34b414f8d12e", "Student", "STUDENT" },
+                    { "b985b240-2dce-4365-bcf5-c4c792b9076b", "b985b240-2dce-4365-bcf5-c4c792b9076b", "Admin", "ADMIN" },
+                    { "f637afd6-a47d-44fc-84bc-fdbca6ed2e4d", "f637afd6-a47d-44fc-84bc-fdbca6ed2e4d", "Teacher", "TEACHER" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "ae11a8b9-658e-4079-b6e8-8f3959de2805", 0, "ae11a8b9-658e-4079-b6e8-8f3959de2805", "Admin@AcademiaHub.com", true, false, null, null, "ADMIN@ACADEMIAHUB.COM", "AQAAAAIAAYagAAAAEIVv8Ew176UOLzUwHnmDRvu0KcPB5Uon3GVg3h38rQ7FzhERZjU9Tdr7T4qgP7vxHg==", null, false, "bdaef782-7658-4e17-80c5-ab1988038b52", false, "Admin@AcademiaHub.com" });
+
+            migrationBuilder.InsertData(
+                table: "Difficulties",
+                columns: new[] { "Id", "DifficultyLevel" },
+                values: new object[,]
+                {
+                    { 1, "Hard" },
+                    { 2, "Medium" },
+                    { 3, "Easy" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "FormTypes",
+                columns: new[] { "Id", "Type" },
+                values: new object[,]
+                {
+                    { 1, "Assignment" },
+                    { 2, "Quiz" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "QuestionTypes",
+                columns: new[] { "Id", "Type" },
+                values: new object[,]
+                {
+                    { 1, "MultipleChoice" },
+                    { 2, "Essay" },
+                    { 3, "TrueOrFalse" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "b985b240-2dce-4365-bcf5-c4c792b9076b", "ae11a8b9-658e-4079-b6e8-8f3959de2805" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

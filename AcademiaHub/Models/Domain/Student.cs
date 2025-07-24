@@ -21,6 +21,7 @@ namespace AcademiaHub.Models.Domain
         public virtual IdentityUser? Account { get; set; }
         public virtual List<Student_Classroom>? Student_Classrooms { get; set; }
         public virtual List<Student_QuestionsForm>? Student_QuestionsForms { get; set; }
+        public virtual List<FormStudentAnswers>? FormStudentAnswers { get; set; }
 
     }
 }

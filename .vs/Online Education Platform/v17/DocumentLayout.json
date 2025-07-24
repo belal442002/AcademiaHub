@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "E:\\Online Education Platform Design\\Online Education Platform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\controllers\\teacherclassroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\controllers\\teacherclassroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\controllers\\student_questionsformcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\controllers\\student_questionsformcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\automapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\automapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\controllers\\studentclassroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\controllers\\studentclassroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\repositories\\teacherclassroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\repositories\\teacherclassroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\models\\dto\\student_questionsform\\student_questionsformgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\student_questionsform\\student_questionsformgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,56 +23,32 @@
       "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\interfaces\\iteacherclassroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\interfaces\\iteacherclassroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\repositories\\student_questionsformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\repositories\\student_questionsformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\teacher_classroom\\teacher_classroomgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\teacher_classroom\\teacher_classroomgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\interfaces\\istudent_questionsformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\interfaces\\istudent_questionsformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\teacher_classroom\\teacher_classroomaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\teacher_classroom\\teacher_classroomaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\models\\domain\\student_questionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\domain\\student_questionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\domain\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\domain\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\models\\dto\\student_questionsform\\student_questionsformaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\student_questionsform\\student_questionsformaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\student_classroom\\student_classroomgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\student_classroom\\student_classroomgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|e:\\online education platform design\\online education platform\\academiahub\\controllers\\formstudentanswerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\controllers\\formstudentanswerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\student_classroom\\student_classroomaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\student_classroom\\student_classroomaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\formstudentanswers\\formstudentansweruploadrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\formstudentanswers\\formstudentansweruploadrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\repositories\\student_classroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\repositories\\student_classroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\interfaces\\istudent_classroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\interfaces\\istudent_classroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\controllers\\classroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\controllers\\classroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\classroom\\classroomaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\classroom\\classroomaddrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\repositories\\classroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\repositories\\classroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\interfaces\\iclassroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\interfaces\\iclassroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\models\\dto\\classroom\\classroomupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\models\\dto\\classroom\\classroomupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|E:\\Online Education Platform Design\\Online Education Platform\\academiahub\\controllers\\formquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E2D90E-A5E7-4292-AB74-A6833151FCD4}|AcademiaHub\\AcademiaHub.csproj|solutionrelative:academiahub\\controllers\\formquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,17 +58,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\AutoMapper\\MappingProfile.cs",
               "RelativeDocumentMoniker": "AcademiaHub\\AutoMapper\\MappingProfile.cs",
               "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\AutoMapper\\MappingProfile.cs",
               "RelativeToolTip": "AcademiaHub\\AutoMapper\\MappingProfile.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAkwDgAAABIAAAA",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAmwKcAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T16:09:31.19Z",
               "IsPinned": true,
@@ -112,259 +76,156 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "AcademiaHub\\UnitOfWork\\IUnitOfWork.cs",
               "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeToolTip": "AcademiaHub\\UnitOfWork\\IUnitOfWork.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAABHAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA5wBUAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T18:18:42.821Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\UnitOfWork\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "AcademiaHub\\UnitOfWork\\UnitOfWork.cs",
               "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\UnitOfWork\\UnitOfWork.cs",
               "RelativeToolTip": "AcademiaHub\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAgwCAAAABTAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T18:18:46.962Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Program.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Program.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Program.cs",
-              "RelativeToolTip": "AcademiaHub\\Program.cs",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAQwIQAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T14:54:09.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\appsettings.json",
-              "RelativeDocumentMoniker": "AcademiaHub\\appsettings.json",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\appsettings.json",
-              "RelativeToolTip": "AcademiaHub\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-21T14:52:54.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TeacherClassroomController.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\TeacherClassroomController.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Controllers\\TeacherClassroomController.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\TeacherClassroomController.cs",
-              "RelativeToolTip": "AcademiaHub\\Controllers\\TeacherClassroomController.cs",
-              "ViewState": "AQIAAMkAAAAAAAAAAAAgwNMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T00:47:56.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ITeacherClassroomRepository.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\ITeacherClassroomRepository.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Interfaces\\ITeacherClassroomRepository.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\ITeacherClassroomRepository.cs",
-              "RelativeToolTip": "AcademiaHub\\Interfaces\\ITeacherClassroomRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T00:39:55.224Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentClassroomController.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\StudentClassroomController.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Controllers\\StudentClassroomController.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\StudentClassroomController.cs",
-              "RelativeToolTip": "AcademiaHub\\Controllers\\StudentClassroomController.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAuwF4AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T20:37:15.682Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TeacherClassroomRepository.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\TeacherClassroomRepository.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Repositories\\TeacherClassroomRepository.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\TeacherClassroomRepository.cs",
-              "RelativeToolTip": "AcademiaHub\\Repositories\\TeacherClassroomRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T00:41:00.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Teacher_ClassroomAddRequest.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomAddRequest.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomAddRequest.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomAddRequest.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomAddRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T00:26:58.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Teacher_ClassroomGetRequest.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomGetRequest.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomGetRequest.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomGetRequest.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Teacher_Classroom\\Teacher_ClassroomGetRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T00:26:01.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Student_ClassroomGetRequest.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomGetRequest.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomGetRequest.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomGetRequest.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomGetRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T20:23:51.864Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Classroom.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Domain\\Classroom.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Domain\\Classroom.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Domain\\Classroom.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Domain\\Classroom.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAABFAAAA",
+              "Title": "FormQuestionsController.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\FormQuestionsController.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Controllers\\FormQuestionsController.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\FormQuestionsController.cs",
+              "RelativeToolTip": "AcademiaHub\\Controllers\\FormQuestionsController.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAmwHMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T18:19:19.658Z",
+              "WhenOpened": "2025-07-23T03:40:15.24Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Student_ClassroomAddRequest.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomAddRequest.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomAddRequest.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomAddRequest.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Student_Classroom\\Student_ClassroomAddRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
+              "DocumentIndex": 9,
+              "Title": "FormStudentAnswersController.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\FormStudentAnswersController.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Controllers\\FormStudentAnswersController.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\FormStudentAnswersController.cs",
+              "RelativeToolTip": "AcademiaHub\\Controllers\\FormStudentAnswersController.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAuwPMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T20:23:22.709Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Student_ClassroomRepository.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\Student_ClassroomRepository.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Repositories\\Student_ClassroomRepository.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\Student_ClassroomRepository.cs",
-              "RelativeToolTip": "AcademiaHub\\Repositories\\Student_ClassroomRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T20:33:39.646Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IStudent_ClassroomRepository.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\IStudent_ClassroomRepository.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Interfaces\\IStudent_ClassroomRepository.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\IStudent_ClassroomRepository.cs",
-              "RelativeToolTip": "AcademiaHub\\Interfaces\\IStudent_ClassroomRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T20:32:50.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ClassroomController.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\ClassroomController.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Controllers\\ClassroomController.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\ClassroomController.cs",
-              "RelativeToolTip": "AcademiaHub\\Controllers\\ClassroomController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAYwEYAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T18:26:37.566Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ClassroomRepository.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\ClassroomRepository.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Repositories\\ClassroomRepository.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\ClassroomRepository.cs",
-              "RelativeToolTip": "AcademiaHub\\Repositories\\ClassroomRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T18:24:32.444Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ClassroomAddRequest.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Classroom\\ClassroomAddRequest.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Classroom\\ClassroomAddRequest.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Classroom\\ClassroomAddRequest.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Classroom\\ClassroomAddRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T18:17:57.025Z",
+              "WhenOpened": "2025-07-23T22:20:23.704Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IClassroomRepository.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\IClassroomRepository.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Interfaces\\IClassroomRepository.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\IClassroomRepository.cs",
-              "RelativeToolTip": "AcademiaHub\\Interfaces\\IClassroomRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABJAAAA",
+              "DocumentIndex": 10,
+              "Title": "FormStudentAnswerUploadRequest.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\FormStudentAnswers\\FormStudentAnswerUploadRequest.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\FormStudentAnswers\\FormStudentAnswerUploadRequest.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\FormStudentAnswers\\FormStudentAnswerUploadRequest.cs",
+              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\FormStudentAnswers\\FormStudentAnswerUploadRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T18:23:40.852Z"
+              "WhenOpened": "2025-07-23T19:57:35.115Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ClassroomUpdateRequest.cs",
-              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Classroom\\ClassroomUpdateRequest.cs",
-              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Classroom\\ClassroomUpdateRequest.cs",
-              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Classroom\\ClassroomUpdateRequest.cs",
-              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Classroom\\ClassroomUpdateRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "DocumentIndex": 2,
+              "Title": "Student_QuestionsFormGetRequest.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormGetRequest.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormGetRequest.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormGetRequest.cs",
+              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormGetRequest.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T18:18:36.091Z",
+              "WhenOpened": "2025-07-24T07:00:34.47Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Student_QuestionsFormController.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\Student_QuestionsFormController.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Controllers\\Student_QuestionsFormController.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Controllers\\Student_QuestionsFormController.cs",
+              "RelativeToolTip": "AcademiaHub\\Controllers\\Student_QuestionsFormController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAiwIQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T07:15:54.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Student_QuestionsFormRepository.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\Student_QuestionsFormRepository.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Repositories\\Student_QuestionsFormRepository.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Repositories\\Student_QuestionsFormRepository.cs",
+              "RelativeToolTip": "AcademiaHub\\Repositories\\Student_QuestionsFormRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T07:12:30.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IStudent_QuestionsFormRepository.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\IStudent_QuestionsFormRepository.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Interfaces\\IStudent_QuestionsFormRepository.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Interfaces\\IStudent_QuestionsFormRepository.cs",
+              "RelativeToolTip": "AcademiaHub\\Interfaces\\IStudent_QuestionsFormRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T07:11:15.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Student_QuestionsFormAddRequest.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormAddRequest.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormAddRequest.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormAddRequest.cs",
+              "RelativeToolTip": "AcademiaHub\\Models\\Dto\\Student_QuestionsForm\\Student_QuestionsFormAddRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T07:02:38.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Student_QuestionsForm.cs",
+              "DocumentMoniker": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Domain\\Student_QuestionsForm.cs",
+              "RelativeDocumentMoniker": "AcademiaHub\\Models\\Domain\\Student_QuestionsForm.cs",
+              "ToolTip": "E:\\Online Education Platform Design\\Online Education Platform\\AcademiaHub\\Models\\Domain\\Student_QuestionsForm.cs",
+              "RelativeToolTip": "AcademiaHub\\Models\\Domain\\Student_QuestionsForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T06:00:12.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

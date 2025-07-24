@@ -51,10 +51,7 @@ namespace AcademiaHub.Migrations
             modelBuilder.Entity("AcademiaHub.Models.Domain.Difficulty", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("DifficultyLevel")
                         .IsRequired()
@@ -63,6 +60,23 @@ namespace AcademiaHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Difficulties");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DifficultyLevel = "Hard"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DifficultyLevel = "Medium"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DifficultyLevel = "Easy"
+                        });
                 });
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.FormDetails", b =>
@@ -91,13 +105,34 @@ namespace AcademiaHub.Migrations
                     b.ToTable("FormDetails");
                 });
 
+            modelBuilder.Entity("AcademiaHub.Models.Domain.FormStudentAnswers", b =>
+                {
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("FormId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("QuestionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("StudentAnswer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("StudentId", "FormId", "QuestionId");
+
+                    b.HasIndex("FormId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("formStudentAnswers");
+                });
+
             modelBuilder.Entity("AcademiaHub.Models.Domain.FormType", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -106,6 +141,18 @@ namespace AcademiaHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FormTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Type = "Assignment"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Type = "Quiz"
+                        });
                 });
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.Form_Questions", b =>
@@ -221,10 +268,7 @@ namespace AcademiaHub.Migrations
             modelBuilder.Entity("AcademiaHub.Models.Domain.QuestionType", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -233,6 +277,23 @@ namespace AcademiaHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("QuestionTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Type = "MultipleChoice"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Type = "Essay"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Type = "TrueOrFalse"
+                        });
                 });
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.QuestionsForm", b =>
@@ -638,6 +699,33 @@ namespace AcademiaHub.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("AcademiaHub.Models.Domain.FormStudentAnswers", b =>
+                {
+                    b.HasOne("AcademiaHub.Models.Domain.QuestionsForm", "QuestionsForm")
+                        .WithMany("FormStudentAnswers")
+                        .HasForeignKey("FormId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AcademiaHub.Models.Domain.QuestionBank", "Question")
+                        .WithMany("FormStudentAnswers")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AcademiaHub.Models.Domain.Student", "Student")
+                        .WithMany("FormStudentAnswers")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("QuestionsForm");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("AcademiaHub.Models.Domain.Form_Questions", b =>
                 {
                     b.HasOne("AcademiaHub.Models.Domain.QuestionsForm", "Form")
@@ -893,6 +981,8 @@ namespace AcademiaHub.Migrations
                 {
                     b.Navigation("Answers");
 
+                    b.Navigation("FormStudentAnswers");
+
                     b.Navigation("Form_Questions");
                 });
 
@@ -903,6 +993,8 @@ namespace AcademiaHub.Migrations
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.QuestionsForm", b =>
                 {
+                    b.Navigation("FormStudentAnswers");
+
                     b.Navigation("Form_Questions");
 
                     b.Navigation("Student_QuestionsForms");
@@ -910,6 +1002,8 @@ namespace AcademiaHub.Migrations
 
             modelBuilder.Entity("AcademiaHub.Models.Domain.Student", b =>
                 {
+                    b.Navigation("FormStudentAnswers");
+
                     b.Navigation("Student_Classrooms");
 
                     b.Navigation("Student_QuestionsForms");

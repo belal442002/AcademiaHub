@@ -1,4 +1,5 @@
-﻿using AcademiaHub.Models.Domain;
+﻿using AcademiaHub.CustomValidation;
+using AcademiaHub.Models.Domain;
 using AcademiaHub.Models.Dto.Classroom;
 using AcademiaHub.Models.Dto.Student;
 using AcademiaHub.Models.Dto.Student_Classroom;
@@ -25,6 +26,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{studentId:guid}/{classroomId:int}")]
+        [ValidationModel]
         public async Task<IActionResult> GetStudentClassroomById([FromRoute] Guid studentId, [FromRoute] int classroomId)
         {
             Student_Classroom? student_Classroom =
@@ -51,6 +53,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> GetStudentClassrooms()
         {
             IEnumerable<Student_Classroom> student_Classrooms =
@@ -67,6 +70,7 @@ namespace AcademiaHub.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        [ValidationModel]
         public async Task<IActionResult> AddStudentToClassroom([FromBody] Student_ClassroomAddRequest student_ClassroomAddRequest)
         {
             Student? student =
@@ -114,6 +118,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:int}")]
+        [ValidationModel]
         public async Task<IActionResult> GetStudentsByClassroomId(int id)
         {
             Classroom? classroom =
@@ -147,6 +152,7 @@ namespace AcademiaHub.Controllers
 
         [HttpGet]
         [Route("[action]/{id:guid}")]
+        [ValidationModel]
         public async Task<IActionResult> GetClassroomsByStudentId(Guid id)
         {
             Student? student = await _unitOfWork.StudentRepository.GetByIdAsync(id);
@@ -176,6 +182,8 @@ namespace AcademiaHub.Controllers
 
             return Ok(classroomGetRequests);    
         }
+
+
 
     }
 }

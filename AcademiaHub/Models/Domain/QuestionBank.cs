@@ -21,5 +21,6 @@ namespace AcademiaHub.Models.Domain
         public virtual QuestionType? QuestionType { get; set; }
         public virtual List<QBAnswers>? Answers { get; set; }
         public virtual List<Form_Questions>? Form_Questions { get; set; }
+        public virtual List<FormStudentAnswers>? FormStudentAnswers { get; set; }
     }
 }

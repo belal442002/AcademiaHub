@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace AcademiaHub.Repositories
 {
@@ -17,6 +18,8 @@ namespace AcademiaHub.Repositories
                                          Func<IQueryable<T>, IQueryable<T>>? include = null);
 
         void Update(T entity);
+        void UpdateRange(List<T> entities);
+
         void Delete(T entity);
     }
 }

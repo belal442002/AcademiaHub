@@ -21,6 +21,38 @@
   },
   {
     "ContainingType": "AcademiaHub.Controllers.AuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Auth/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordRequest",
+        "Type": "AcademiaHub.Models.Dto.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.AuthController",
+    "Method": "DeleteUserByUserId",
+    "RelativePath": "api/Auth/DeleteUserByUserId/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
@@ -30,6 +62,22 @@
       {
         "Name": "loginRequest",
         "Type": "AcademiaHub.Models.Dto.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.AuthController",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/Auth/RegisterAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerAdminRequest",
+        "Type": "AcademiaHub.Models.Dto.RegisterAdminRequest",
         "IsRequired": true
       }
     ],
@@ -62,6 +110,38 @@
       {
         "Name": "registerRequest",
         "Type": "AcademiaHub.Models.Dto.TeacherRegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.AuthController",
+    "Method": "ResetPasswordByEmail",
+    "RelativePath": "api/Auth/ResetPasswordByEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resetPassword",
+        "Type": "AcademiaHub.Models.Dto.ResetPasswordByEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.AuthController",
+    "Method": "ResetPasswordByUserId",
+    "RelativePath": "api/Auth/ResetPasswordByUserId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resetPassword",
+        "Type": "AcademiaHub.Models.Dto.ResetPasswordByUserIdRequest",
         "IsRequired": true
       }
     ],
@@ -103,6 +183,275 @@
     "ContainingType": "AcademiaHub.Controllers.ClassroomController",
     "Method": "GetClassrooms",
     "RelativePath": "api/Classroom/GetClassrooms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.DifficultiesController",
+    "Method": "GetDifficulties",
+    "RelativePath": "api/Difficulties/action",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.FormQuestionsController",
+    "Method": "AddQuestionsToForm",
+    "RelativePath": "api/FormQuestions/AddQuestionsToForm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formQuestionsAddRequest",
+        "Type": "System.Collections.Generic.List\u00601[[AcademiaHub.Models.Dto.Form_Questions.FormQuestionsAddRequest, AcademiaHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.FormQuestionsController",
+    "Method": "GetFormQuestionsByFormId",
+    "RelativePath": "api/FormQuestions/GetFormQuestionsByFormId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.FormQuestionsController",
+    "Method": "GetFormQuestionsForStudentByFormAndStudentId",
+    "RelativePath": "api/FormQuestions/GetFormQuestionsForStudentByFormAndStudentId/{studentId}/{formId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.FormStudentAnswersController",
+    "Method": "UploadFormQuestions",
+    "RelativePath": "api/FormStudentAnswers/UploadFormQuestions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formAnswersUploadRequest",
+        "Type": "AcademiaHub.Models.Dto.FormStudentAnswers.FormAnswersUploadRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.FormTypeController",
+    "Method": "GetFormTypes",
+    "RelativePath": "api/FormType/GetFormTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionBankController",
+    "Method": "AddQuestion",
+    "RelativePath": "api/QuestionBank/AddQuestion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionAddRequest",
+        "Type": "AcademiaHub.Models.Dto.QuestionBank.QuestionsAddRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionBankController",
+    "Method": "AddQuestions",
+    "RelativePath": "api/QuestionBank/AddQuestions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionsAddRequest",
+        "Type": "System.Collections.Generic.List\u00601[[AcademiaHub.Models.Dto.QuestionBank.QuestionsAddRequest, AcademiaHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionBankController",
+    "Method": "GetQuestionById",
+    "RelativePath": "api/QuestionBank/GetQuestionById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionBankController",
+    "Method": "GetQuestionsByClassroomId",
+    "RelativePath": "api/QuestionBank/GetQuestionsByClassroomId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "AddQuestionsForm",
+    "RelativePath": "api/QuestionsForm/AddQuestionsForm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionsFormAddRequest",
+        "Type": "AcademiaHub.Models.Dto.QuestionsForm.QuestionsFormAddRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "DeactivateFormsByClassroomId",
+    "RelativePath": "api/QuestionsForm/DeactivateFormsByClassroomId/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "DeleteFormByFormId",
+    "RelativePath": "api/QuestionsForm/DeleteFormByFormId/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "GetFormById",
+    "RelativePath": "api/QuestionsForm/GetFormById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "GetFormsByClassroomId",
+    "RelativePath": "api/QuestionsForm/GetFormsByClassroomId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "GetFormsForStudentByClassroomId",
+    "RelativePath": "api/QuestionsForm/GetFormsForStudentByClassroomId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionsFormController",
+    "Method": "UpdateForm",
+    "RelativePath": "api/QuestionsForm/UpdateForm",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcademiaHub.Controllers.QuestionTypesController",
+    "Method": "GetQuestionTypes",
+    "RelativePath": "api/QuestionTypes/GetQuestionTypes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
